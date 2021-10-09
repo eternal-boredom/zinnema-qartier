@@ -24,7 +24,8 @@ const videos = document.querySelectorAll('video');
 
 videos.forEach((video) => {
     video.addEventListener("ended", (event => {
-        let instance = M.Modal.getInstance(event.target.parentNode.parentNode);
+        // console.log(event.target.closest(".modal"));
+        let instance = M.Modal.getInstance(event.target.closest(".modal"));
         instance.close();
     }))
 })
