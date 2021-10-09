@@ -1,17 +1,16 @@
 window.addEventListener("load", initMaterialize);
 
 function initMaterialize() {
-    M.AutoInit();
+    var elems = document.querySelectorAll('.modal');
+    var instances = M.Modal.init(elems, {
+        onOpenEnd: function() {
+            this.el.querySelector('video').play();
+        },
+        onCloseStart: function() {
+            this.el.querySelector('video').pause();
+        },
+        onCloseEnd: function() {
+            this.el.querySelector('video').load();
+        }
+    });
 }
-
-const video = document.querySelector('video');
-var instance = M.Modal.getInstance(video);
-
-instance.
-
-
-video.addEventListener('canplaythrough', (event) => {
-    video.play()
-  console.log('I think I can play through the entire ' +
-      'video without ever having to stop to buffer.');
-});
