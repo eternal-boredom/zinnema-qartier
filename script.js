@@ -8,8 +8,9 @@ req.onload = () => {
     if (this.status === 200) {
         let videoBlob = this.response;
         let vid = URL.createObjectURL(videoBlob);
+        console.log('vid: ', vid);
+        document.querySelector('#m9 > source').src = vid;
     }
-    console.log('vid: ', vid);
 }
 
 req.onerror = () => {
