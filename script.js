@@ -1,6 +1,26 @@
+let req = new XMLHttpRequest();
+req.open('GET', './assets/videos/julien-kremer-tatoue.mp4', true);
+req.responseType = 'blob';
+console.log('before onload')
+
+req.onload = () => {
+    console.log('onload')
+    if (this.status === 200) {
+        let videoBlob = this.response;
+        let vid = URL.createObjectURL(videoBlob);
+    }
+    console.log('vid: ', vid);
+}
+
+req.onerror = () => {
+    console.log('error');
+}
+
+req.send();
+
 window.addEventListener("load", () => {
     initMaterialize();
-    idlePlay();
+    // idlePlay();
 });
 
 let highestModalIndex = document.querySelectorAll(".modal").length - 1;
