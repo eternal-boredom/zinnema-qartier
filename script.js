@@ -1,6 +1,6 @@
 window.addEventListener("load", () => {
     initMaterialize();
-    idlePlay();
+    // idlePlay();
 });
 
 let highestModalIndex = document.querySelectorAll(".modal").length - 1;
