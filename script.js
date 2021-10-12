@@ -1,6 +1,9 @@
-window.addEventListener("load", initMaterialize);
+window.addEventListener("load", () => {
+    initMaterialize();
+    idlePlay();
+});
 
-let highestModalIndex = 1;
+let highestModalIndex = document.querySelectorAll(".modal").length - 1;
 let nextToPlay = 0;
 let idleTimeout;
 
@@ -21,7 +24,6 @@ function initMaterialize() {
             idlePlay();
         }
     });
-    console.log(instances);
 }
 
 const videos = document.querySelectorAll('video');
@@ -43,11 +45,10 @@ function idlePlay() {
         } else {
             nextToPlay = 0;
         }
-    }, (5 * 60 * 1000))  // 5 fois 60 secondes (1000 ms)
+    }, (10 * 1000))  // 5 fois 60 secondes (1000 ms)
 }
 
 function suspendIdlePlay() {
     clearTimeout(idleTimeout);
 }
 
-idlePlay();
