@@ -6,14 +6,14 @@ console.log('before onload')
 req.onload = () => {
     console.log('onload, req.status: ', req.status);
     if (req.status === 200) {
-        let videoBlob = this.response;
-        console.log('videoBlob: ', videoBlob);
+        let videoBlob = req.response;
+        console.log('req.response: ', req.response);
         console.log('videoBlob typeof: ', typeof videoBlob);
 
         // let vid = URL.createObjectURL(videoBlob);
         // console.log('vid: ', vid);
         // document.querySelector('#m9 > source').src = vid;
-        
+
         const video = document.createElement('video');
         video.srcObject = videoBlob;
         document.querySelector('#m9 > div').appendChild(video);
