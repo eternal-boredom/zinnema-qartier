@@ -6,3 +6,7 @@ Website project for the Zinnema (Louis de Funès expo)
 
 # To do
 - Disable contextual menu
+- test carousel's swipe
+- scale video if necessary
+- adapt idleplay for carousel
+- how to suggest swiping and tap
