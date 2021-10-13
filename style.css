@@ -7,6 +7,24 @@
 
 body {
     background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.modal {
+    line-height: 0 !important;
+    background-color: transparent;
+    top: 50% !important;
+    transform: translateY(-50%) scaleX(1) scaleY(1) !important;
+}
+
+.modal-content {
+    padding: 0 !important;
+    line-height: 0 !important;
+}
+
+video {
+    border-radius: 3%;
 }
 
 .carousel .carousel-item>img {
@@ -25,5 +43,5 @@ header {
 }
 
 footer {
-    margin-top: 10px;
+    height: 160px;
 }
