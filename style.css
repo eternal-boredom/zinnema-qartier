@@ -4,3 +4,140 @@
     justify-content: space-around;
     align-content: space-around;
 }
+
+body {
+    background-image: url(./assets/logos/funes-tetes-2.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 150%;
+    background-position-y: top;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+}
+
+.modal {
+    line-height: 0 !important;
+    background-color: transparent;
+    top: 50% !important;
+    transform: translateY(-50%) scaleX(1) scaleY(1) !important;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 30px;
+}
+
+.modal-content {
+    padding: 0 !important;
+    line-height: 0 !important;
+}
+
+video {
+    border-radius: 1%;
+}
+
+.carousel {
+    height: 100vh !important;
+    margin-top: -8.5em;
+    margin-bottom: 20vw;
+    overflow: visible;
+}
+
+.poster {
+    width: 30vw !important;
+    height: auto;
+    margin-left: -50%;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    display: flex;
+    justify-content: center;
+}
+
+footer>img {
+    width: 50%;
+    margin: 0 0 1.5vw 0;
+}
+
+.arrow_old {
+    width: 4em;
+    height: auto;
+    border-radius: 50%;
+    background-color: #E4007D;
+    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
+    line-height: normal;
+    transition: 0.2s;
+}
+
+.arrow_old:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
+}
+
+.arrow_old > img {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+}
+
+.arrow > img {
+    width: 10vw;
+}
+
+.container {
+    width: 100% !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} 
+
+
+#avare {
+    background-image: url(./assets/posters/avare.jpg);
+}
+
+#tropez {
+    background-image: url(./assets/posters/tropez.jpg);
+}
+
+#aile {
+    background-image: url(./assets/posters/aile.jpg);
+}
+
+#folie {
+    background-image: url(./assets/posters/folie.jpg);
+}
+
+#gendarme {
+    background-image: url(./assets/posters/gendarme.jpg);
+}
+
+#orchestre {
+    background-image: url(./assets/posters/orchestre.jpg);
+}
+
+#oscar {
+    background-image: url(./assets/posters/oscar.jpg);
+}
+
+#hibernatus {
+    background-image: url(./assets/posters/hibernatus.jpg);
+}
+
+#tatoue {
+    background-image: url(./assets/posters/tatoue.jpg);
+}
+
+#zizanie {
+    background-image: url(./assets/posters/zizanie.jpg);
+}

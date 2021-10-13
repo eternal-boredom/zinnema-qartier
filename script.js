@@ -1,7 +1,16 @@
 window.addEventListener("load", () => {
     initMaterialize();
+    var elems = document.querySelectorAll('.carousel');
+    const options = {
+        numVisible: 5,
+        shift: 100,
+        padding: 100
+    }
+    let carousel = M.Carousel.init(elems, options);
     // idlePlay();
 });
+
+window.addEventListener("contextmenu", e => e.preventDefault());
 
 let highestModalIndex = document.querySelectorAll(".modal").length - 1;
 let nextToPlay = 0;
@@ -21,7 +30,7 @@ function initMaterialize() {
         },
         onCloseEnd: function() {
             this.el.querySelector('video').load();
-            idlePlay();
+            // idlePlay();
         }
     });
 }
