@@ -1,5 +1,7 @@
 window.addEventListener("load", () => {
     initMaterialize();
+    var elems = document.querySelectorAll('.carousel');
+    var instances = M.Carousel.init(elems);
     // idlePlay();
 });
 
@@ -21,7 +23,7 @@ function initMaterialize() {
         },
         onCloseEnd: function() {
             this.el.querySelector('video').load();
-            idlePlay();
+            // idlePlay();
         }
     });
 }

@@ -4,3 +4,26 @@
     justify-content: space-around;
     align-content: space-around;
 }
+
+body {
+    background-color: black;
+}
+
+.carousel .carousel-item>img {
+    width: 282px !important;
+}
+
+.carousel {
+    height: 600px !important;
+    margin-top: -8.5em;
+    margin-bottom: 100px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+}
+
+footer {
+    margin-top: 10px;
+}
