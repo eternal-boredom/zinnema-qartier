@@ -1,7 +1,12 @@
 window.addEventListener("load", () => {
     initMaterialize();
     var elems = document.querySelectorAll('.carousel');
-    var instances = M.Carousel.init(elems);
+    const options = {
+        numVisible: 5,
+        shift: 100,
+        padding: 100
+    }
+    var instances = M.Carousel.init(elems, options);
     // idlePlay();
 });
 
