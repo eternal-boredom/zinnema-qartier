@@ -6,9 +6,11 @@ window.addEventListener("load", () => {
         shift: 100,
         padding: 100
     }
-    var instances = M.Carousel.init(elems, options);
+    let carousel = M.Carousel.init(elems, options);
     // idlePlay();
 });
+
+window.addEventListener("contextmenu", e => e.preventDefault());
 
 let highestModalIndex = document.querySelectorAll(".modal").length - 1;
 let nextToPlay = 0;

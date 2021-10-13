@@ -74,6 +74,14 @@ footer>img {
     -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
     box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
     line-height: normal;
+    transition: 0.2s;
+}
+
+.arrow_old:hover {
+    cursor: pointer;
+    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
 }
 
 .arrow_old > img {
