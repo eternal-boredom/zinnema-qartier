@@ -1,19 +1,20 @@
-.flexing {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
-}
-
 body {
-    background-image: url(./assets/logos/funes-tetes-2.jpg);
+    background-image: url(./assets/logos/LouisHeads2.png);
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 150%;
-    background-position-y: top;
+    background-size: 120%;
+    background-position-y: -10vh;
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
+    height: 100vh;
+}
+
+.main-container {
+    width: 100% !important;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    padding: 0 5vw;
 }
 
 .modal {
@@ -38,68 +39,32 @@ video {
 }
 
 .carousel {
-    height: 100vh !important;
-    margin-top: -8.5em;
-    margin-bottom: 20vw;
-    overflow: visible;
+    height: 90% !important;
 }
 
-.poster {
-    width: 30vw !important;
-    height: auto;
-    margin-left: -50%;
-}
-
-header {
+.carousel > a {
+    width: 25vw !important;
+    height: 100%;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
+}
+
+.arrow > img {
+    width: 6vw;
 }
 
 footer {
     display: flex;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+    height: auto;
     justify-content: center;
 }
 
 footer>img {
     width: 50%;
-    margin: 0 0 1.5vw 0;
 }
-
-.arrow_old {
-    width: 4em;
-    height: auto;
-    border-radius: 50%;
-    background-color: #E4007D;
-    -webkit-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
-    box-shadow: 1px 1px 10px 0px rgba(0,0,0,0.75);
-    line-height: normal;
-    transition: 0.2s;
-}
-
-.arrow_old:hover {
-    cursor: pointer;
-    -webkit-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
-    box-shadow: 3px 3px 10px 0px rgba(0,0,0,0.75);
-}
-
-.arrow_old > img {
-    width: 100%;
-    height: auto;
-    padding: 10px;
-}
-
-.arrow > img {
-    width: 10vw;
-}
-
-.container {
-    width: 100% !important;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-} 
 
 
 #avare {

@@ -29,11 +29,17 @@ function initMaterialize() {
 
     var carousel = document.querySelectorAll('.carousel');
     const carouselOptions = {
-        numVisible: 5,
-        shift: 100,
-        padding: 100
+        numVisible: 5
     }
-    let materializedCarousel = M.Carousel.init(carousel, carouselOptions);
+    let materializedCarousels = M.Carousel.init(carousel, carouselOptions);
+
+    document.querySelector("#left_arrow").addEventListener("click", (event) => {
+        materializedCarousels[0].prev();
+    })
+
+    document.querySelector("#right_arrow").addEventListener("click", (event) => {
+        materializedCarousels[0].next();
+    })
 }
 
 const videos = document.querySelectorAll('video');
