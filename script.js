@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
     // idlePlay();
 });
 
-window.addEventListener("contextmenu", e => e.preventDefault());
+// window.addEventListener("contextmenu", e => e.preventDefault());
 
 let highestModalIndex = document.querySelectorAll(".modal").length - 1;
 let nextToPlay = 0;
