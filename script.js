@@ -1,12 +1,5 @@
 window.addEventListener("load", () => {
     initMaterialize();
-    var elems = document.querySelectorAll('.carousel');
-    const options = {
-        numVisible: 5,
-        shift: 100,
-        padding: 100
-    }
-    let carousel = M.Carousel.init(elems, options);
     // idlePlay();
 });
 
@@ -17,8 +10,8 @@ let nextToPlay = 0;
 let idleTimeout;
 
 function initMaterialize() {
-    var elems = document.querySelectorAll('.modal');
-    var instances = M.Modal.init(elems, {
+    var modals = document.querySelectorAll('.modal');
+    var materializedModals = M.Modal.init(modals, {
         onOpenStart: function() {
             suspendIdlePlay();
         },
@@ -33,6 +26,14 @@ function initMaterialize() {
             // idlePlay();
         }
     });
+
+    var carousel = document.querySelectorAll('.carousel');
+    const carouselOptions = {
+        numVisible: 5,
+        shift: 100,
+        padding: 100
+    }
+    let materializedCarousel = M.Carousel.init(carousel, carouselOptions);
 }
 
 const videos = document.querySelectorAll('video');
@@ -41,7 +42,6 @@ videos.forEach((video) => {
     video.addEventListener("ended", (event => {
         let instance = M.Modal.getInstance(event.target.closest(".modal"));
         instance.close();
-        isPlaying = false;
     }))
 });
 
