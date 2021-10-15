@@ -10,7 +10,7 @@ window.addEventListener("load", () => {
     initMaterialize();
     interruptAutomation();
     idleCarouselPlay();
-    closeModalHandler();
+    // closeModalHandler();
 });
 
 function interruptAutomation() {  
@@ -37,7 +37,7 @@ function initMaterialize() {
             isPlaying = true;
             suspendIdleVideoPlay();
             suspendIdleCarouselPlay();
-            videoCloserTransition();
+            // videoCloserTransition();
             hideHands();
         },
         onOpenEnd: function() {
@@ -45,7 +45,7 @@ function initMaterialize() {
         },
         onCloseStart: function() {
             this.el.querySelector('video').pause();
-            videoCloserTransition();
+            // videoCloserTransition();
         },
         onCloseEnd: function() {
             isPlaying = false;
@@ -128,26 +128,26 @@ function showHands() {
     hands.forEach((hand) => {hand.style.display = "block"});
 }
 
-function closeModalHandler() {
-    const videoCloser = document.querySelector("#videoClose");
-    videoCloser.addEventListener("click", (event) => {
-        let modal = document.querySelector(".modal.open");
-        let instance = M.Modal.getInstance(modal);
-        instance.close();
-    })
-}
+// function closeModalHandler() {
+//     const videoCloser = document.querySelector("#videoClose");
+//     videoCloser.addEventListener("click", (event) => {
+//         let modal = document.querySelector(".modal.open");
+//         let instance = M.Modal.getInstance(modal);
+//         instance.close();
+//     })
+// }
 
-function videoCloserTransition() {
-    const videoCloser = document.querySelector("#videoClose");
+// function videoCloserTransition() {
+//     const videoCloser = document.querySelector("#videoClose");
 
-    if (videoCloser.classList.contains('hide-element')) {
-        // show
-        videoCloser.classList.add('element-transition');
-        videoCloser.clientWidth; // force layout to ensure the now display: block and opacity: 0 values are taken into account when the CSS transition starts.
-        videoCloser.classList.remove('hide-element');
-    } else {
-        // hide
-        videoCloser.classList.add('element-transition');
-        videoCloser.classList.add('hide-element');
-    }
-}
+//     if (videoCloser.classList.contains('hide-element')) {
+//         // show
+//         videoCloser.classList.add('element-transition');
+//         videoCloser.clientWidth; // force layout to ensure the now display: block and opacity: 0 values are taken into account when the CSS transition starts.
+//         videoCloser.classList.remove('hide-element');
+//     } else {
+//         // hide
+//         videoCloser.classList.add('element-transition');
+//         videoCloser.classList.add('hide-element');
+//     }
+// }

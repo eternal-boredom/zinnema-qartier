@@ -127,7 +127,7 @@ video {
     width: 100%;
 }
 
-.element {
+/* .modalCloser {
     position: absolute;
     right: calc(50% - 3vw);
     bottom: 10%;
@@ -148,7 +148,7 @@ video {
 
 .element-transition {
     transition: opacity 0.1s ease;
-}
+} */
 
 footer {
     display: flex;
