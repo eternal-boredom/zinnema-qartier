@@ -1,7 +1,7 @@
-let time;
 let highestModalIndex = document.querySelectorAll(".modal").length - 1;
 let nextToPlay = 0;
 let globalIdle;
+let isPlaying = false;
 let idleVideoTimeout;
 let idleCarouselTimeout;
 let idleCarouselInterval;
@@ -17,8 +17,12 @@ function interruptAutomation() {
         suspendIdleCarouselPlay();
         suspendIdleVideoPlay();
         
-        // clearTimeout(globalIdle);
-        // globalIdle = setTimeout(idleCarouselPlay, 5000);
+        clearTimeout(globalIdle);
+        globalIdle = setTimeout(() => {
+            if (!isPlaying) {
+                idleCarouselPlay();
+            }
+        }, 15000); // temps de relance après activité de l'utilisateur
     });
 }
 
@@ -29,19 +33,23 @@ function initMaterialize() {
     var modals = document.querySelectorAll('.modal');
     var materializedModals = M.Modal.init(modals, {
         onOpenStart: function() {
+            isPlaying = true;
             suspendIdleVideoPlay();
             suspendIdleCarouselPlay();
-            hideHands();
+            testTransition()
         },
         onOpenEnd: function() {
+            UIElementsWhenPlaying();
             this.el.querySelector('video').play();
         },
         onCloseStart: function() {
             this.el.querySelector('video').pause();
+            UIElementsWhenNotPlaying();
+            testTransition()
         },
         onCloseEnd: function() {
+            isPlaying = false;
             this.el.querySelector('video').load();
-            showHands();
             idleCarouselPlay();
         }
     });
@@ -96,8 +104,8 @@ function idleCarouselPlay() {
                 idleVideoPlay();
                 suspendIdleCarouselPlay();
             }
-        }, 1000)
-    }, (5 * 1000))  // 20 secondes (de 1000 ms)
+        }, 10000)
+    }, (20 * 1000))  // 20 secondes (de 1000 ms)
 }
 
 function suspendIdleVideoPlay() {
@@ -109,12 +117,35 @@ function suspendIdleCarouselPlay() {
     clearInterval(idleCarouselInterval);
 }
 
-function hideHands() {
+function UIElementsWhenPlaying() {
     const hands = document.querySelectorAll(".hand");
     hands.forEach((hand) => {hand.style.display = "none"});
+
+    const videoCloser = document.querySelector("#videoClose");
+    // videoCloser.style.display = "block"
+    // videoCloser.style.opacity = 1;
 }
 
-function showHands() {
+function UIElementsWhenNotPlaying() {
     const hands = document.querySelectorAll(".hand");
     hands.forEach((hand) => {hand.style.display = "block"});
+
+    const videoCloser = document.querySelector("#videoClose");
+    // videoCloser.style.display = "none"
+    // videoCloser.style.opacity = 0;
+}
+
+function testTransition() {
+    const videoCloser = document.querySelector("#videoClose");
+
+    if (videoCloser.classList.contains('hide-element')) {
+        // show
+        videoCloser.classList.add('element-transition');
+        videoCloser.clientWidth; // force layout to ensure the now display: block and opacity: 0 values are taken into account when the CSS transition starts.
+        videoCloser.classList.remove('hide-element');
+    } else {
+        // hide
+        videoCloser.classList.add('element-transition');
+        videoCloser.classList.add('hide-element');
+    }
 }

@@ -67,24 +67,6 @@ video {
     animation: fadingSwipe 20s infinite;
 }
 
-/* @keyframes fadingSwipe {
-    0% {
-        opacity: 0
-    }
-
-    25% {
-        opacity: 1
-    }
-
-    75% {
-        opacity: 1;
-    }
-
-    100% {
-        opacity: 0
-    }
-} */
-
 @keyframes fadingSwipe {
     0% {
         opacity: 0;
@@ -107,10 +89,6 @@ video {
     }
 }
 
-#handSwipe>img {
-    width: 100%;
-}
-
 #handTap {
     position: absolute;
     bottom: 13%;
@@ -120,24 +98,6 @@ video {
 
     animation: fadingTap 20s infinite;
 }
-
-/* @keyframes fadingTap {
-    0% {
-        opacity: 1
-    }
-
-    25% {
-        opacity: 0
-    }
-
-    75% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1
-    }
-} */
 
 @keyframes fadingTap {
     0% {
@@ -161,8 +121,42 @@ video {
     }
 }
 
-#handTap>img {
+#handSwipe>img,
+#handTap>img,
+#videoClose>img {
     width: 100%;
+}
+
+/* #videoClose {
+    position: absolute;
+    right: calc(50% - 3vw);
+    bottom: 10%;
+    width: 6vW;
+    z-index: 1003;
+    display: none;
+} */
+
+.element {
+    position: absolute;
+    right: calc(50% - 3vw);
+    bottom: 10%;
+    width: 6vW;
+    z-index: 1003;
+    display: block;
+    opacity: 1;
+}
+
+.hide-element {
+    display: block;
+}
+
+.element-transition.hide-element {
+    display: block;
+    opacity: 0;
+}
+
+.element-transition {
+    transition: opacity 1s ease;
 }
 
 footer {
