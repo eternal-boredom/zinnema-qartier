@@ -41,7 +41,7 @@ video {
     height: 90% !important;
 }
 
-.carousel > a {
+.carousel>a {
     width: 25vw !important;
     height: 100%;
     display: flex;
@@ -52,9 +52,103 @@ video {
     padding: 0 5vw;
 }
 
-.arrow > img {
+.arrow>img {
     width: 6vw;
 }
+
+#handSwipe {
+    position: absolute;
+    bottom: 17%;
+    left: 25%;
+    width: 9vw;
+    z-index: 3;
+
+    opacity: 1;
+    animation: fadingSwipe 20s infinite;
+}
+
+@keyframes fadingSwipe {
+    0% {
+        opacity: 0;
+    }
+
+    5% {
+        opacity: 1;
+    }
+
+    45% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#handTap {
+    position: absolute;
+    bottom: 13%;
+    right: 47%;
+    width: 5vw;
+    z-index: 3;
+
+    animation: fadingTap 20s infinite;
+}
+
+@keyframes fadingTap {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    55% {
+        opacity: 1;
+    }
+
+    95% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+#handSwipe>img,
+#handTap>img,
+#videoClose>img {
+    width: 100%;
+}
+
+/* .modalCloser {
+    position: absolute;
+    right: calc(50% - 3vw);
+    bottom: 10%;
+    width: 6vW;
+    z-index: 1003;
+    display: block;
+    opacity: 1;
+}
+
+.hide-element {
+    display: none;
+}
+
+.element-transition.hide-element {
+    display: block;
+    opacity: 0;
+}
+
+.element-transition {
+    transition: opacity 0.1s ease;
+} */
 
 footer {
     display: flex;
@@ -68,7 +162,6 @@ footer {
 footer>img {
     width: 50%;
 }
-
 
 #avare {
     background-image: url(./assets/posters/avare.jpg);
