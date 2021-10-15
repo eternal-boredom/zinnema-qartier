@@ -27,7 +27,7 @@ function interruptAutomation() {
     });
 }
 
-// window.addEventListener("contextmenu", e => e.preventDefault());
+window.addEventListener("contextmenu", e => e.preventDefault());
 
 
 function initMaterialize() {
