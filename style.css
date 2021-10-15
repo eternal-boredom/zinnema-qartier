@@ -127,15 +127,6 @@ video {
     width: 100%;
 }
 
-/* #videoClose {
-    position: absolute;
-    right: calc(50% - 3vw);
-    bottom: 10%;
-    width: 6vW;
-    z-index: 1003;
-    display: none;
-} */
-
 .element {
     position: absolute;
     right: calc(50% - 3vw);
@@ -147,7 +138,7 @@ video {
 }
 
 .hide-element {
-    display: block;
+    display: none;
 }
 
 .element-transition.hide-element {
@@ -156,7 +147,7 @@ video {
 }
 
 .element-transition {
-    transition: opacity 1s ease;
+    transition: opacity 0.1s ease;
 }
 
 footer {

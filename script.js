@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
     initMaterialize();
     interruptAutomation();
     idleCarouselPlay();
+    closeModalHandler();
 });
 
 function interruptAutomation() {  
@@ -36,21 +37,21 @@ function initMaterialize() {
             isPlaying = true;
             suspendIdleVideoPlay();
             suspendIdleCarouselPlay();
-            testTransition()
+            videoCloserTransition();
+            hideHands();
         },
         onOpenEnd: function() {
-            UIElementsWhenPlaying();
             this.el.querySelector('video').play();
         },
         onCloseStart: function() {
             this.el.querySelector('video').pause();
-            UIElementsWhenNotPlaying();
-            testTransition()
+            videoCloserTransition();
         },
         onCloseEnd: function() {
             isPlaying = false;
             this.el.querySelector('video').load();
             idleCarouselPlay();
+            showHands();
         }
     });
 
@@ -117,25 +118,26 @@ function suspendIdleCarouselPlay() {
     clearInterval(idleCarouselInterval);
 }
 
-function UIElementsWhenPlaying() {
+function hideHands() {
     const hands = document.querySelectorAll(".hand");
     hands.forEach((hand) => {hand.style.display = "none"});
-
-    const videoCloser = document.querySelector("#videoClose");
-    // videoCloser.style.display = "block"
-    // videoCloser.style.opacity = 1;
 }
 
-function UIElementsWhenNotPlaying() {
+function showHands() {
     const hands = document.querySelectorAll(".hand");
     hands.forEach((hand) => {hand.style.display = "block"});
-
-    const videoCloser = document.querySelector("#videoClose");
-    // videoCloser.style.display = "none"
-    // videoCloser.style.opacity = 0;
 }
 
-function testTransition() {
+function closeModalHandler() {
+    const videoCloser = document.querySelector("#videoClose");
+    videoCloser.addEventListener("click", (event) => {
+        let modal = document.querySelector(".modal.open");
+        let instance = M.Modal.getInstance(modal);
+        instance.close();
+    })
+}
+
+function videoCloserTransition() {
     const videoCloser = document.querySelector("#videoClose");
 
     if (videoCloser.classList.contains('hide-element')) {
