@@ -41,7 +41,7 @@ video {
     height: 90% !important;
 }
 
-.carousel > a {
+.carousel>a {
     width: 25vw !important;
     height: 100%;
     display: flex;
@@ -52,7 +52,7 @@ video {
     padding: 0 5vw;
 }
 
-.arrow > img {
+.arrow>img {
     width: 6vw;
 }
 
@@ -62,9 +62,48 @@ video {
     left: 25%;
     width: 9vw;
     z-index: 3;
+
+    opacity: 1;
+    animation: fadingSwipe 10s infinite;
 }
 
-#handSwipe > img {
+/* @keyframes fadingSwipe {
+    0% {
+        opacity: 0
+    }
+
+    25% {
+        opacity: 1
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0
+    }
+} */
+
+@keyframes fadingSwipe {
+    0% {
+        opacity: 0
+    }
+
+    25% {
+        opacity: 1
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0
+    }
+}
+
+#handSwipe>img {
     width: 100%;
 }
 
@@ -74,9 +113,47 @@ video {
     right: 47%;
     width: 5vw;
     z-index: 3;
+
+    animation: fadingTap 10s infinite;
 }
 
-#handTap > img {
+@keyframes fadingTap {
+    0% {
+        opacity: 1
+    }
+
+    25% {
+        opacity: 0
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes fadingTap {
+    0% {
+        opacity: 1
+    }
+
+    25% {
+        opacity: 0
+    }
+
+    75% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+#handTap>img {
     width: 100%;
 }
 
