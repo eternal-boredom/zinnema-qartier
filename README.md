@@ -5,14 +5,8 @@ Website project for the Zinnema (Louis de Funès expo)
 - [Zinnema](https://www.zinnema.be/fr)
 - [Draft_Design](https://cdn.discordapp.com/attachments/701783640303992885/897946393304514590/main.png)
 
-# To do
-- scale video if necessary
-- adapt idleplay for carousel
-
-- make left/right buttons work
-- replace carousel (remove padding) + place buttons with z-index to allow swiping on whole page
-
-# Done
-- how to suggest swiping and tap -> see Draft_Design
-- Disable contextual menu
-- test carousel's swipe (seems to work on mobile)
+# credits
+[Alexandre Ntougas](https://github.com/alexandrentougas)
+[Simon Stiens](https://github.com/Stimonis)
+[Yadrychnikov Nicolay](https://saddest.one/)
+[Teddy Kishi - Bicolore](https://github.com/Bicolore)
