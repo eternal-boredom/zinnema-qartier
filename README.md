@@ -6,7 +6,7 @@ Website project for the Zinnema (Louis de Funès expo)
 - [Draft_Design](https://cdn.discordapp.com/attachments/701783640303992885/897946393304514590/main.png)
 
 # credits
-[Alexandre Ntougas](https://github.com/alexandrentougas)
-[Simon Stiens](https://github.com/Stimonis)
-[Yadrychnikov Nicolay](https://saddest.one/)
-[Teddy Kishi - Bicolore](https://github.com/Bicolore)
+- [Alexandre Ntougas](https://github.com/alexandrentougas)
+- [Simon Stiens](https://github.com/Stimonis)
+- [Yadrychnikov Nicolay](https://saddest.one/)
+- [Teddy Kishi - Bicolore](https://github.com/Bicolore)
